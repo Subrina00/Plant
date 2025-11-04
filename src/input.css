@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+
+/* @theme {
+  --breakpoint-sm: 340px; 
+  --breakpoint-md: 540px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1180px;
+} */
+
+@theme {
+  --breakpoint-sm: 21.25rem;  /* 340px */
+  --breakpoint-md: 33.75rem;  /* 540px */
+  --breakpoint-lg: 48rem;     /* 768px */
+  --breakpoint-xl: 73.75rem;  /* 1180px */
+
+
+  --font-jost: 'Jost', sans-serif;
+  --font-lobster: 'Lobster Two', cursive;
+}
+
+@layer components {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @apply px-[12px] md:px-[32px];
+
+    
+  }
+}
+
+  
+
+    /* @screen md {
+    .container {
+      padding-inline: 32px;
+    }
+  } */
+
+
+
+
+  .jost{
+    font-family: var(--font-jost);
+  }
+
+  .lobster{
+    font-family: var(--font-lobster);
+  }
+
+    @layer base {
+    body{
+      @apply bg-green-950 text-white font-jost tracking-wider;
+    }
+
+    html{
+        @apply overflow-x-hidden scroll-smooth;
+    }
+
+    section{
+        @apply py-20 md:py-28;
+    }
+
+    h1{
+        @apply text-3xl md:text-4xl xl:text-5xl font-bold;
+    }
+
+    h2{
+        @apply text-2xl md:text-3xl xl:text-4xl;
+    }
+
+     h3{
+        @apply text-xl md:text-2xl xl:text-3xl;
+    }
+  }
+
+  
+
+  .nav-link {
+    @apply text-lg font-bold duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-yellow-500;
+  }
+
+  .btn{
+    @apply border border-yellow-500 bg-yellow-500 rounded-md px-5
+     py-2 duration-300;
+  }
+
+  .btn span{
+    @apply font-bold;
+  }
+
+  .btn:hover{
+    @apply opacity-90;
+  }
+
+  .btn_outline{
+    @apply bg-transparent;
+  }
+
+  .btn_outline:hover{
+    @apply bg-yellow-500;
+  }
+
+  .title{
+    @apply font-lobster text-yellow-500;
+  }
+
+
+.popular_card:hover img{
+    @apply -top-8;
+  }
+
+  .swiper-pagination-bullet{
+    @apply bg-green-500 w-3 h-3;
+  }
+
+  .active {
+    @apply text-yellow-500;
+  }
+
+
+@layer utilities{
+    @keyframes animate {
+        50% {
+            transform: translateY(-1rem);
+        }
+    }
+    .animat{
+        animation: animate 3s linear infinite ;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    .rotat{
+        animation: rotate 15s linear infinite;
+    }
+
+     @keyframes scaleUp {
+        0% {
+            transform: scale(0.8);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(0.8);
+        }
+    }
+    .scal{
+        animation: scaleUp 3s linear infinite;
+    }
+}
